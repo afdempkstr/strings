@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Strings
 {
@@ -35,13 +36,21 @@ namespace Strings
 
             Console.WriteLine(ReplaceFirst("patatakia", "ta", ""));
 
+            StringBuilder sb = new StringBuilder("a long time ago in a galaxy far far away");
 
+            sb[3] = 't';
+            sb.Append(true);
+            sb.Append(3.14);
+            sb.Append("test test 123");
 
+            sb.Replace("test", "experiment");
 
-
+            sb.Insert(0, "begin");
+            
+            Console.WriteLine(sb.ToString());
+            sb.Clear();
+            
             Console.Read();
-
-
         }
 
         static string ReplaceFirst(string input, string search, string replace)
