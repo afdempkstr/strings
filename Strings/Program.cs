@@ -33,8 +33,7 @@ namespace Strings
             var s2 = s1.Substring(0, index) + "thout" + s1.Substring(index + "th".Length);
             Console.WriteLine(s2);
 
-
-
+            Console.WriteLine(ReplaceFirst("patatakia", "ta", ""));
 
 
 
@@ -45,8 +44,13 @@ namespace Strings
 
         }
 
-        string ReplaceFirst(string input, string search, string replace)
+        static string ReplaceFirst(string input, string search, string replace)
         {
+            var position = input.IndexOf(search);
+            if (position != -1)
+            {
+                return input.Substring(0, position) + replace + input.Substring(position + search.Length);
+            }
             return input;
         }
 
